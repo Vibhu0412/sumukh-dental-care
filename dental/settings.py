@@ -27,7 +27,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'z4vh%27+$w)dz^j7!9i)zxv$(k4^w1qwm+we91+_diqubn7(+0'
 SECRET_KEY = os.environ.get('SECRET_KEY')
-print(" I AM SECRET KEY """, SECRET_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -145,6 +144,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ.get('DJANGO_EMAIL_TESTING_ACCOUNT_NAME')
 EMAIL_HOST_PASSWORD = os.environ.get('DJANGO_EMAIL_TESTING_ACCOUNT_PASSWORD')
 EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Email settings (Local Testing)
 # python -m smtpd -n -c DebuggingServer localhost:1025

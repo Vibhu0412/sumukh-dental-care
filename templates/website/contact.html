@@ -77,20 +77,24 @@
               <form action="{% url 'contact' %}" method="post">
                 {% csrf_token %}
                 <div class="row">
-                  <div class="col-lg-6">
-                    <input type="text" name="message_name" class="form-control mb-30" placeholder="Your Name">
-                  </div>
-                  <div class="col-lg-6">
-                    <input type="email" name="message_email" class="form-control mb-30" placeholder="Your Email">
-                  </div>
-                  <div class="col-12">
-                    <textarea name="message" class="form-control mb-30" placeholder="Your Message"></textarea>
-                  </div>
-                  <div class="col-12">
-                    <button type="submit" class="btn dento-btn">Send Message</button>
-                  </div>
+                    <div class="col-lg-6">
+                        <input type="text" name="message_name" class="form-control mb-30" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="tel" name="message_phone" class="form-control mb-30" placeholder="Your Phone Number" required>
+                        
+                    </div>
+                    <div class="col-lg-12">
+                        <input type="email" name="message_email" class="form-control mb-30" placeholder="Your Email" required>
+                    </div>
+                    <div class="col-12">
+                        <textarea name="message" class="form-control mb-30" placeholder="Your Message" required></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn dento-btn">Send Message</button>
+                    </div>
                 </div>
-              </form>
+            </form>
             {% endif %}
           </div>
         </div>
